@@ -7,8 +7,6 @@ from app.consensus import pow
 
 
 def create_block(transactions):
-    # todo implement
-
     last_block = get_last_block()
 
     transactions_str = list(map(lambda x: x.to_json(), transactions))
