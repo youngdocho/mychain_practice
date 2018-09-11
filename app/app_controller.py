@@ -11,57 +11,68 @@ import logging
 listen_thread = None
 port_number = None
 
+
 def start_app(ip_list, isPrivate):
-	port_number = 3000
-	storage.init()
-	communicator.set_network(ip_list, isPrivate)
-	start_communicator(port_number)
+    port_number = 3000
+    storage.init()
+    communicator.set_network(ip_list, isPrivate)
+    start_communicator(port_number)
+
 
 def finish_app():
-	import os
-	storage.session.commit()
-	storage.session.close()
-	stop_communicator()
-	os._exit(1)
+    import os
+    storage.session.commit()
+    storage.session.close()
+    stop_communicator()
+    os._exit(1)
+
 
 def send_transaction(msg):
-	# pri_key, pub_key = key.get_key()
-	tx = transaction.create_tx(msg)
-	transaction.send_tx(tx)
+    # pri_key, pub_key = key.get_key()
+    tx = transaction.create_tx(msg)
+    transaction.send_tx(tx)
+
 
 def start_communicator(port):
-	import threading
-	global port_number
-	port_number = port
-	set_my_node(False)
-	node.key.generate_key()
+    import threading
+    global port_number
+    port_number = port
+    set_my_node(False)
+    node.key.generate_key()
 
-	log.write("Start node")
+    log.write("Start node")
 
-	global listen_thread
-	listen_thread = threading.Thread(target=receiver.start, args=("Listener_Thread",
-																			   communicator.my_ip_address.get_ip_address('en0'), port_number))
-	listen_thread.start()
-	return
+    global listen_thread
+    listen_thread = threading.Thread(target=receiver.start, args=("Listener_Thread",
+                                                                  communicator.my_ip_address.get_ip_address('en0'),
+                                                                  port_number))
+    listen_thread.start()
+    return
+
 
 def stop_communicator():
-	communicator.receiver.stop()
-	global listen_thread
-	listen_thread.join()
+    communicator.receiver.stop()
+    global listen_thread
+    listen_thread.join()
+
 
 # important!
 def create_block():
-	return
+    return
+
 
 def list_all_node():
-	return
+    return
+
 
 def list_all_transaction():
-	return
+    return
+
 
 def list_all_block():
-	return
+    return
+
 
 # register my ip
 def set_my_node(set_my_node=True):
- 	return
+    return

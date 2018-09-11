@@ -3,9 +3,11 @@ import hashlib
 
 from merkle import MerkleTree
 
+
 def chunk(list, n):
     for i in range(0, len(list), n):
         yield list[i:i + n]
+
 
 # 라이브러리를 사용한 머클트리
 def merkle_tree(transactions):
@@ -15,6 +17,7 @@ def merkle_tree(transactions):
         mt.add(t.encode('utf-8'))
 
     return codecs.encode(mt.build(), 'hex-codec').decode('utf-8')
+
 
 # ========================================================
 if __name__ == '__main__':

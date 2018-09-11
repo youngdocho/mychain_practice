@@ -15,18 +15,21 @@ PING_INTERVAL = 5  # Once per second
 is_running = True
 t = None
 
-def stop():
-	global is_running, t
-	is_running = False
-	t.join()
 
-def set_network(ip_list, isPrivate = True):
-	if isPrivate:
-		# todo
-		for ip in ip_list:
-			print(ip)
-	else:
-		start_public()
+def stop():
+    global is_running, t
+    is_running = False
+    t.join()
+
+
+def set_network(ip_list, isPrivate=True):
+    if isPrivate:
+        # todo
+        for ip in ip_list:
+            print(ip)
+    else:
+        start_public()
+
 
 def start_public():
-	return
+    return

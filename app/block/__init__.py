@@ -5,6 +5,7 @@ from app.block.Block import Block
 from app.block.merkle_tree import merkle_tree
 from app.consensus import pow
 
+
 def create_block(transactions):
     # todo implement
 
@@ -31,7 +32,7 @@ def create_block(transactions):
     _block.nonce = nonce
     _block.block_info = block_info
     _block.time_stamp = datetime.datetime.now()
-    _block.block_id = "B"+str(_block.time_stamp)
+    _block.block_id = "B" + str(_block.time_stamp)
     _block.merkle_root = merkle_root
 
     return _block
@@ -40,12 +41,14 @@ def create_block(transactions):
 def store_block(_block):
     storage.insert(_block)
 
+
 def count():
     return storage.count(Block)
 
 
 def get_all_block():
     return storage.get_all(Block)
+
 
 def get_genesis_block():
     b = Block()
@@ -58,12 +61,13 @@ def get_genesis_block():
 
     return b
 
+
 def get_last_block():
     # todo
     return
+
 
 def validate_block(block):
     from numpy import long
     # todo
     return True
-

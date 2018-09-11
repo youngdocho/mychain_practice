@@ -3,6 +3,7 @@ from dateutil import parser
 from sqlalchemy import Column, String, Integer, DateTime
 import json
 
+
 class Block(storage.Base):
     __tablename__ = 'blocks'
 
@@ -22,7 +23,7 @@ class Block(storage.Base):
     def __init__(self):
         self.type = 'B'
 
-    def __str__(self): # built-in function and by print statement to compute the "informal" string repr of an obj.
+    def __str__(self):  # built-in function and by print statement to compute the "informal" string repr of an obj.
         return self.to_json()
 
     def to_json(self):
