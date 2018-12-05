@@ -58,21 +58,26 @@ def stop_communicator():
 
 # important!
 def create_block():
+    # todo
     return
 
 
 def list_all_node():
-    return
+    for n in node.get_all():
+        log.write(n, logging.DEBUG)
 
 
 def list_all_transaction():
+    # todo
     return
 
 
 def list_all_block():
+    # todo
     return
 
 
 # register my ip
 def set_my_node(set_my_node=True):
+    # todo
     return

@@ -13,36 +13,41 @@ session = DBSession()
 def init():
     Base.metadata.create_all(engine)
 
-
-# todo implement functions below
 # http://docs.sqlalchemy.org/en/latest/orm/tutorial.html#create-an-instance-of-the-mapped-class
 def insert(obj):
+    # todo
     return
 
 
 def insert_or_update(obj, cond):
+    # todo
     return
 # return mandatory
 
 
 def get(clz, **kwargs):
+    # todo
     return
 # return mandatory
 
 
 def count(clz):
+    # todo
     return
 # return mandatory
 
 
 def remove(obj):
+    # todo
     return
 
 
 def get_all(clz):
+    # todo
     return
 # return mandatory
 
 
 def remove_all(clz):
+    # todo
     return

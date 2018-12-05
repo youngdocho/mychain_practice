@@ -7,7 +7,7 @@ def signal_handler(_signal, frame):
     app_controller.finish_app()
 
 
-# 프라이빗 블록체인의 경우 ip 리스트가 필요함
+# todo PEER의 IP를 등록함
 ip_list = ["70.12.113.119", "70.12.113.222"]
 app_controller.start_app(ip_list, isPrivate=True)
 
