@@ -15,9 +15,9 @@ def init():
 
 # http://docs.sqlalchemy.org/en/latest/orm/tutorial.html#create-an-instance-of-the-mapped-class
 def insert(obj):
-    # todo
-    return
-
+    session.add(obj)
+    session.commit()
+    
 
 def insert_or_update(obj, cond):
     # todo
@@ -26,9 +26,7 @@ def insert_or_update(obj, cond):
 
 
 def get(clz, **kwargs):
-    # todo
-    return
-# return mandatory
+    return session.query(clz).filter_by(**kwargs).first()
 
 
 def count(clz):
