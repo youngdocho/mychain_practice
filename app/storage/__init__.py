@@ -20,9 +20,10 @@ def insert(obj):
     
 
 def insert_or_update(obj, cond):
-    # todo
-    return
-# return mandatory
+    if session.query(obj.__class__).filter(cond).first():
+        return
+    else:
+        insert(obj)
 
 
 def get(clz, **kwargs):
@@ -30,22 +31,18 @@ def get(clz, **kwargs):
 
 
 def count(clz):
-    # todo
-    return
-# return mandatory
+    return session.query(clz).count()
 
 
 def remove(obj):
-    # todo
-    return
+    session.delete(obj)
+    session.commit()
 
 
 def get_all(clz):
-    # todo
-    return
-# return mandatory
+    return session.query(clz).all()
 
 
 def remove_all(clz):
-    # todo
-    return
+    session.query(clz).delete()
+    session.commit()
