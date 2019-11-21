@@ -10,10 +10,10 @@ Blockchain System for Education
 <pre><code>source ./venv/bin/activate</code></pre>
 
 3. 외부 라이브러리 설치
-<pre><code>pip3 install -r requirments.txt
+<pre><code>pip3 install -r requirements.txt
 </code></pre>
 
-4. 블록 체인 실행
+4. 블록체인 실행
 <pre><code>python3 mychain.py</code></pre>
 
 자신의 노드를 생성 후 시작 
