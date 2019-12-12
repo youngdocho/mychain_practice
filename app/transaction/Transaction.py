@@ -10,6 +10,7 @@ from app import storage
 class Transaction(storage.Base):
 	__tablename__ = 'transactions'
 
+	# todo
 	#_id Integer
 	# type String
 	# time_stamp DateTime
